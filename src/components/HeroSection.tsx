@@ -1,30 +1,28 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-spa.jpg";
+import heroImage from "@/assets/hero-landscape.jpg";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Ancestral spa surrounded by lush tropical greenery"
+          alt="Western Cape fynbos landscape at golden hour"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="absolute inset-0 bg-foreground/55" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container text-center px-4">
+      <div className="relative z-10 container text-center px-4 py-20">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-sm md:text-base tracking-[0.3em] uppercase text-primary-foreground/70 mb-6 font-body"
+          className="text-xs md:text-sm tracking-[0.35em] uppercase text-primary-foreground/60 mb-4 font-body"
         >
-          Holistic Healing Spa
+          Indigenous Healing &amp; Creative Wellness · Western Cape, South Africa
         </motion.p>
 
         <motion.h1
@@ -33,43 +31,48 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-medium text-primary-foreground leading-tight mb-8"
         >
-          Return to
-          <br />
-          <span className="italic">Your Roots</span>
+          Ancestral
         </motion.h1>
 
-        <motion.p
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="w-16 h-px bg-primary-foreground/30 mx-auto mb-8"
+        />
+
+        <motion.blockquote
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-lg mx-auto text-primary-foreground/80 text-base md:text-lg font-light leading-relaxed mb-10 font-body"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="max-w-2xl mx-auto text-primary-foreground/80 text-base md:text-lg font-light leading-relaxed mb-10 font-body italic"
         >
-          Ancient wisdom meets modern wellness. Restore balance through
-          nature-rooted therapies passed down through generations.
-        </motion.p>
+          "We are the memory of the land, and the land remembers us. Through plants, touch, and story—we heal."
+        </motion.blockquote>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#services"
+            href="https://wa.me/27743288901"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 text-sm tracking-widest uppercase bg-primary-foreground text-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-300 font-medium"
           >
-            Explore Treatments
+            Book Now
           </a>
           <a
-            href="#contact"
+            href="#services"
             className="px-10 py-4 text-sm tracking-widest uppercase border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 transition-colors duration-300 font-medium"
           >
-            Book a Session
+            Our Services
           </a>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -1,46 +1,77 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Globe } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-primary text-primary-foreground">
+    <section id="contact" className="py-20 md:py-28 bg-earth text-earth-foreground">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-sm tracking-[0.3em] uppercase text-primary-foreground/60 mb-4 font-body">
+          <p className="text-xs tracking-[0.3em] uppercase text-earth-foreground/60 mb-4 font-body">
             Get in Touch
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium">
-            Begin Your <span className="italic">Healing</span>
+          <h2 className="font-heading text-3xl md:text-5xl font-medium">
+            Let's Connect. Heal. <span className="italic">Remember.</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
-            { icon: MapPin, title: "Visit Us", lines: ["123 Serenity Lane", "Santa Fe, NM 87501"] },
-            { icon: Phone, title: "Call Us", lines: ["(505) 555-0142", "hello@ancestral.spa"] },
-            { icon: Clock, title: "Hours", lines: ["Mon – Sat: 9am – 7pm", "Sun: 10am – 5pm"] },
+            {
+              icon: Phone,
+              title: "Call / WhatsApp",
+              lines: ["074 328 8901"],
+              href: "https://wa.me/27743288901",
+            },
+            {
+              icon: Mail,
+              title: "Email",
+              lines: ["info@ancestralholistichealing.online"],
+              href: "mailto:info@ancestralholistichealing.online",
+            },
+            {
+              icon: Globe,
+              title: "Website",
+              lines: ["ancestralholistichealing.online"],
+              href: "https://ancestralholistichealing.online",
+            },
+            {
+              icon: MapPin,
+              title: "Location",
+              lines: ["Western Cape", "South Africa"],
+            },
           ].map((item, i) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
               className="text-center"
             >
-              <item.icon size={24} strokeWidth={1.5} className="mx-auto mb-4 text-primary-foreground/70" />
-              <h3 className="font-heading text-lg font-medium mb-2">{item.title}</h3>
-              {item.lines.map((line) => (
-                <p key={line} className="text-sm text-primary-foreground/70 font-body">
-                  {line}
-                </p>
-              ))}
+              <item.icon size={22} strokeWidth={1.5} className="mx-auto mb-3 text-earth-foreground/70" />
+              <h3 className="font-heading text-base font-medium mb-2">{item.title}</h3>
+              {item.lines.map((line) =>
+                item.href ? (
+                  <a
+                    key={line}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-sm text-earth-foreground/70 font-body hover:text-earth-foreground transition-colors"
+                  >
+                    {line}
+                  </a>
+                ) : (
+                  <p key={line} className="text-sm text-earth-foreground/70 font-body">
+                    {line}
+                  </p>
+                )
+              )}
             </motion.div>
           ))}
         </div>
