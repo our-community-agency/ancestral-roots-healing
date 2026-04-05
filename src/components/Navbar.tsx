@@ -17,8 +17,22 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#home" className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-          Ancestral
+        <a href="#home" className="flex items-center gap-3 text-foreground">
+          <img
+            src="/logo.png"
+            alt="Ancestral logo"
+            className="h-11 w-11 rounded-full object-cover border border-border/80"
+            width={44}
+            height={44}
+          />
+          <div className="leading-none">
+            <p className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+              Ancestral
+            </p>
+            <p className="hidden sm:block text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">
+              Roots Healing
+            </p>
+          </div>
         </a>
 
         <div className="hidden lg:flex items-center gap-8">

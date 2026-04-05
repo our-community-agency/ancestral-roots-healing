@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-landscape.jpg";
+import heroImage from "@/assets/hero-ancestral-healing.jpg";
 
 const HeroSection = () => {
   return (
@@ -16,6 +16,17 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 container text-center px-4 py-20">
+        <motion.img
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          src="/logo.png"
+          alt="Ancestral emblem"
+          className="mx-auto mb-6 h-24 w-24 rounded-full border border-primary-foreground/25 object-cover shadow-2xl"
+          width={96}
+          height={96}
+        />
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

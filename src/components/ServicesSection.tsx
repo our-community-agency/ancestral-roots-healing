@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import massageImg from "@/assets/service-massage.jpg";
+import massageImg from "@/assets/massage-ritual.jpeg";
 
 const ServicesSection = () => {
   return (
@@ -35,7 +35,7 @@ const ServicesSection = () => {
           >
             <img
               src={massageImg}
-              alt="Hot stones on a green leaf"
+              alt="Ancestral massage and healing ritual"
               loading="lazy"
               width={640}
               height={800}

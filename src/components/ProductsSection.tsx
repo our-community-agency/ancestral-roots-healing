@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import salveImg from "@/assets/product-salve.jpg";
-import teaImg from "@/assets/product-tea.jpg";
-import merchImg from "@/assets/product-merch.jpg";
+import salveImg from "@/assets/product-salve-real.jpeg";
+import teaImg from "@/assets/wellness-collection.jpg";
+import merchImg from "@/assets/hero-ancestral-healing.jpg";
 
 const products = [
   {
